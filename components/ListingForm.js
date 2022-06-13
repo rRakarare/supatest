@@ -32,6 +32,7 @@ const ListingForm = ({
   };
 
   const handleOnSubmit = async (values = null) => {
+    console.log(values)
     let toastId;
     try {
       setDisabled(true);
@@ -46,6 +47,7 @@ const ListingForm = ({
         router.push(redirectPath);
       }
     } catch (e) {
+      console.log(e.message)
       toast.error('Unable to submit', { id: toastId });
       setDisabled(false);
     }
